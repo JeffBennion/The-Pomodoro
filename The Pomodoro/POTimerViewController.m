@@ -9,10 +9,14 @@
 #import "POTimerViewController.h"
 
 @interface POTimerViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *Timer;
+@property (strong, nonatomic) IBOutlet UIButton *Button;
 
 @end
 
 @implementation POTimerViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +37,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)startTimer:(id)sender {
+    self.Button.enabled = NO;
+    [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
+}
+
+- (void)decreaseSecond{
+
 }
 
 @end
